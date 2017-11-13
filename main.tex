@@ -1,0 +1,386 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MatPlotLib and Random Cheat Sheet
+%
+% Edited by Michelle Cristina de Sousa Baltazar
+%
+% http://matplotlib.org/api/pyplot_summary.html
+% http://matplotlib.org/users/pyplot_tutorial.html
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{amsmath,amssymb}
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+
+%For correct tilde
+\usepackage{times}
+\usepackage{textcomp}
+% \texttildelow
+
+\title{Hackathon Cheatsheet}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.5in
+\advance\evensidemargin-1.5in
+\parindent0pt
+\parskip2pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+%\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
+\begin{document}
+
+\begin{center}{\huge{\textbf{Hackathon Cheatsheet}}}\\
+%{\large By Sebastian Schönitz}
+\end{center}
+\begin{multicols*}{3}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+%------------ CONTEÚDO CAIXA RANDOM ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+		Generate your own ssh-key and set permissions: \\
+        \\
+		\textbf{\$ ssh-keygen -t rsa} \\
+		\textbf{\$ chmod 700 \texttildelow/.ssh} \\
+		\textbf{\$ chmod 600 \texttildelow/.ssh/id\_rsa} \\
+		\textbf{\$ chmod 644 \texttildelow/.ssh/id\_rsa.pub} \\
+        \\
+        Log into the Hackathon GitLab with your given credentials.\\
+        \begin{enumerate}
+        \item Go to \textbf{settings} (Icon on the upper right).
+        \item Click on \textbf{SSH Keys}.
+        \item \textbf{\$ cat \texttildelow/.ssh/id\_rs.pub}
+        \item Copy everything to the \textbf{Key} textarea and save.
+        \end{enumerate}
+    \end{minipage}
+};
+%------------ CAIXA RANDOM ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {GitLab Basics};
+\end{tikzpicture}
+
+
+%------------ CONTEÚDO CAIXA MatPlotLib ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+		Configure your Git: \\
+        \\
+		\textbf{\$ git config -\,-global user.name \;"Your Name"} \\
+		\textbf{\$ git config -\,-global user.email \;"you@example.com"} \\
+		\textbf{\$ git config -\,-global color.ui auto} \\
+		\\
+    \end{minipage}
+};
+%------------ CAIXA PRELIMINARES ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Git configuration};
+\end{tikzpicture}
+%------------ CONTEUDO EXEMPLO BASICO ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    	Enter the right directory:\\
+    	\textbf{\$ cd fawkes-robotino/fawkes/...}\\
+        Clone the right repository:\\
+        \textbf{\$ git clone ...}\\
+        Checkout your branch:\\
+        \textbf{\$ git checkout team-\textit{*your number*}}\\
+        \\
+        Start hacking and read about the git-workflow.
+    \end{minipage}
+};
+%------------ EXEMPLO BASICO BOX ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Get the code};
+\end{tikzpicture}
+%------------ CONTEUDO DOIS EIXOS ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+		You made your first changes and want to save your progress. You can display all files changed by entering:\\
+		\textbf{\$ git status}\\
+		Group all files that were changed and contribute to a feature an add them:\\
+		\textbf{\$ git add [files]}\\
+		Commit the added files. Write a helpful commit message. It will save you time. \\ 
+		\textbf{\$ git commit } will open an editor.\\
+		\textbf{\$ git commit -m "commit message"} will take the short commit message.\\
+		Now you should push that:\\
+		\textbf{\$ git push}
+    \end{minipage}
+};
+%------------ DOIS EIXOS BOX ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Git workflow};
+\end{tikzpicture}
+%------------ CONTEÚDO COMANDOS DE TEXTO ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    ... you added the wrong file:\\
+    \textbf{\$ git reset [file]}\\ \\
+	... \textbf{git commit} opened the wrong editor:\\
+	\textbf{\$ git config --global core.editor "vim"}\\ or "emacs" if you like.\\ \\
+	... don't know what you've changed:\\
+	\textbf{\$ git diff [file]}\\
+	You can look up more options at \url{https://git-scm.com/docs/git-diff}\\ \\
+	... you search for a specific commit:\\
+	\textbf{\$ git log}\\
+	or do so interactively:\\
+	\textbf{\$ gitk}\\ \\
+	... you want to revert a specific commit:\\
+	\textbf{\$ git revert [hash-of-commit]}
+    \end{minipage}
+};
+%------------ COMANDOS DE TEXTO BOX ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {What to do, if};
+\end{tikzpicture}
+%------------ CONTEUDO PROPRIEDADES ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+	\textbf{\$ git add [files]}\\
+	If the fire is near:\\
+	\textbf{\$ git add .}\\
+	After that:\\
+	\textbf{\$ git commit -m "fire"}\\
+	\textbf{\$ git push}\\ \\
+	Run!
+    \end{minipage}
+};
+%------------ PROPRIEDADES BOX ----------------
+\node[fancytitle, right=10pt] at (box.north west) {In case of fire};
+\end{tikzpicture}
+
+%------------ CONTEÚDO CAIXA MatPlotLib ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+	\begin{minipage}{0.3\textwidth}
+	Maybe you are new to Linux and want to go to different directories, you should use \textbf{cd}:\\
+	\textbf{\$ cd \textit{path}}\\
+	If you want to go to your home-directory:\\
+	\textbf{\$ cd}\\
+	If you qant to go somewhere relative to your home-directory:\\
+	\textbf{\$ cd \texttildelow/\textit{path}}\\
+	If you want to go a directory up:\\
+	\textbf{\$ cd ..}\\ \\
+	
+	If you want to know what files and subdirectories are in the current directory:\\
+	\textbf{\$ ls}\\ \\
+		
+	If you think you need inspiration on your code, you can use grep to get your inspiration:\\
+	\textbf{\$ grep [options] \textit{searchstring} [files]}\\
+	If you don't know which file could possible contain your search string, grep can recursively go through the directories, starting from the current one:\\
+	\textbf{\$ grep -R \textit{searchstring}}
+	\end{minipage}
+};
+%------------ CAIXA PRELIMINARES ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Usefull tips};
+\end{tikzpicture}
+%------------ CONTEUDO PROPRIEDADES ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+	\begin{minipage}{0.3\textwidth}
+	Change your directory to the following:\\
+	\textbf{\$ cd \texttildelow/fawkes-robotino/bin}\\
+	Start the simulation with:\\
+	\textbf{\$ ./gazsim.bash -x start -n 1 -r -a}
+	\end{minipage}
+};
+%------------ PROPRIEDADES BOX ----------------
+\node[fancytitle, right=10pt] at (box.north west) {Get the Simulation running};
+\end{tikzpicture}
+\end{multicols*}
+\newpage
+\begin{center}{\huge{\textbf{Hackathon Cheatsheet - CLIPS}}}\\
+	%{\large By Sebastian Schönitz}
+\end{center}
+\begin{multicols*}{3}
+	
+	\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+	rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+	\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+	%------------ CONTEÚDO CAIXA RANDOM ---------------
+	\begin{tikzpicture}
+	\node [mybox] (box){%
+		\begin{minipage}{0.3\textwidth}
+		The  Language Integrated Production System (\textbf{CLIPS}) consists mainly of the following components:\\
+		\begin{center}
+		\begin{tabular}{lp{5.5cm} l}
+		Facts & Representation of knowledge\\
+		\hline Templates & Abstract structure for facts\\
+		\hline Variables & Variables that only life within the scope they are defined in\\
+		\hline Globals & Variables with a global scope\\
+		\hline Functions & Sequence of actions. Similiar to other programming languages \\
+		\hline Rules & The heart of CLIPS. If-Then-structure which fires if the lefthandside (LHS) is fulfilled.\\ 
+		\end{tabular}
+		\end{center}\end{minipage}
+	};
+	%------------ CAIXA RANDOM ---------------------
+	\node[fancytitle, right=10pt] at (box.north west) {CLIPS overview};
+	\end{tikzpicture}
+	
+	
+	%------------ CONTEÚDO CAIXA MatPlotLib ---------------
+	\begin{tikzpicture}
+	\node [mybox] (box){%
+		\begin{minipage}{0.3\textwidth}
+		A fact consists of a \textbf{factname} and its \textbf{content}. There can usally only be one unique fact.
+		You can add a fact as following:\\
+		\textbf{(assert (factname content1 content2 ... contentN))}\\ \\
+		You can also have a \textbf{deffacts} construct, which asserts facts automatically wheneever the \textbf{reset} command is performed. It consits of a unique name an optional comment and at least one fact:\\
+
+		(deffacts deffactsname "optional comment"\\
+		$\-$\hspace{5mm} (fact1 content1 content2)\\
+		$\-$\hspace{5mm} (fact2 content3)\\
+		)
+		\end{minipage}
+	};
+	%------------ CAIXA PRELIMINARES ---------------------
+	\node[fancytitle, right=10pt] at (box.north west) {Facts};
+	\end{tikzpicture}
+	%------------ CONTEUDO EXEMPLO BASICO ---------------------
+	\begin{tikzpicture}
+	\node [mybox] (box){%
+		\begin{minipage}{0.3\textwidth}
+		A template consists of a \textbf{templatename} different slots and multislots, which can be constrained.
+		You can construct a template as follows:\\ \\
+		(deftemplate templatename "optional comment"\\
+		$\-$\hspace{5mm}(slot slot-name1 (default ?NONE))\\
+		$\-$\hspace{5mm}(slot slot-name2 (type INTEGER))\\
+		$\-$\hspace{5mm}(multislot slot-name3 (allowed-values 1 3.5 "A"))\\
+		)\\
+		A fact can be asserted like this:\\
+		\textbf{(assert (templatename\\
+			(slotname1 "foo")  (slot-name2 2)(slot-name3 3.5 1 1)))}
+		\end{minipage}
+	};
+	%------------ EXEMPLO BASICO BOX ---------------------
+	\node[fancytitle, right=10pt] at (box.north west) {Templates 1};
+	\end{tikzpicture}
+	%------------ CONTEUDO DOIS EIXOS ---------------------
+	\begin{tikzpicture}
+	\node [mybox] (box){%
+		\begin{minipage}{0.3\textwidth}
+		A slot can have a default value. One speciality ist \textbf{\$NONE}. This means this slot must be filled when a fact for this template is asserted.\\ \\
+		Additionaly, it can be specified which type values of this slot must have. Allowed types are: \textbf{SYMBOL, STRING, NUMBER, INTEGER,} and\textbf{ FLOAT.}\\
+		One can also specify which values are allowed. This can be archieved by \textbf{allowed-} and \textbf{symbols, strings, numbers, integers, floats,} and\textbf{ values.}\\
+		For numbers the allowed values can be constraint by a range, for example: \textbf{(range 1 375)}\\ \\
+		In multifield-slots the number of stored values can be restricted, for example: \textbf{(cardinality 17)}
+		\end{minipage}
+	};
+	%------------ DOIS EIXOS BOX ---------------------
+	\node[fancytitle, right=10pt] at (box.north west) {Templates 2};
+	\end{tikzpicture}
+	%------------ CONTEUDO DOIS EIXOS ---------------------
+	\begin{tikzpicture}
+	\node [mybox] (box){%
+		\begin{minipage}{0.3\textwidth}
+		A variable can be defined like this:\\
+		\textbf{(bind ?variable-name 1)}\\
+		A multifield-variable can be defined:\\
+		\textbf{(bind ?variable-name (create\$ 1 1 2 3 5 8))}\\
+		One can get the length of a multifield-variable with:\\
+		\textbf{(length ?multifield-variable)}\\
+		Moreover, one can extract the $n$-th element. For example the second element:\\
+		\textbf{(nth\$ 2 ?multifield-variable)}
+		\end{minipage}
+	};
+	%------------ DOIS EIXOS BOX ---------------------
+	\node[fancytitle, right=10pt] at (box.north west) {Variables};
+	\end{tikzpicture}
+	%------------ CONTEÚDO COMANDOS DE TEXTO ---------------------
+	\begin{tikzpicture}
+	\node [mybox] (box){%
+		\begin{minipage}{0.3\textwidth}
+		Global variables are similar to variables, except that they have a global scope and they have a different syntax:\\
+		\textbf{?*foo*} is a global variable, but \textbf{?foo} is not. Globals can be defined within a \textbf{defglobal} block:\\
+		(defglobal \\
+		$\-$\hspace{5mm}?*foo* = 1\\
+		$\-$\hspace{5mm}?*bar* = "FooBar"\\
+		)
+		\end{minipage}
+	};
+	%------------ COMANDOS DE TEXTO BOX ---------------------
+	\node[fancytitle, right=10pt] at (box.north west) {Globals};
+	\end{tikzpicture}
+	%------------ CONTEUDO PROPRIEDADES ---------------------
+	\begin{tikzpicture}
+	\node [mybox] (box){%
+		\begin{minipage}{0.3\textwidth}
+		Functions are similiar to other languages. An example:\\
+		(deffunction add-x-to-y (?y ?x)\\
+		$\-$\hspace{5mm}(bind ?y (+ ?y ?x))\\
+		$\-$\hspace{5mm}(return ?y)\\
+		)\\
+		A return value is not needed.
+		\end{minipage}
+	};
+	%------------ PROPRIEDADES BOX ----------------
+	\node[fancytitle, right=10pt] at (box.north west) {Functions};
+	\end{tikzpicture}
+	
+	%------------ CONTEÚDO CAIXA MatPlotLib ---------------
+	\begin{tikzpicture}
+	\node [mybox] (box){%
+		\begin{minipage}{0.3\textwidth}
+		Rules are the heart of CLIPS. A rule consists maily of a name, a LHS, and a RHS.
+		If, after a new fact was asserted, the LHS of rule matches, the RHS will be executed.
+		An simple example would be if A is true, then B true follows:\\ \\
+		(defrule a-follows-b\\
+		$\-$\hspace{5mm}(A true)\\
+		=$>$\\
+		$\-$\hspace{5mm}(assert (B true))\\
+		)\\
+		But maybe we want that, when A is true or false and B is false, B should be deleted and added as true:\\ \\
+		(defrule a-will-be-deleted\\
+		$\-$\hspace{5mm}(A ?whatever)\\
+		$\-$\hspace{5mm}?b $<$- (B false)\\
+		=$>$\\
+		$\-$\hspace{5mm}(retract ?b)\\
+		$\-$\hspace{5mm}(assert (B true))\\
+		)\\
+		Another scenario would be that, if a counter is above a certain threshold, A should be deleted and the counter set to 0:\\
+		(defglobal ?*counter-threshold*)\\
+		(deftemplate counter (slot steps (type INTEGER) ) )\\
+		(defrule countermagic\\
+		$\-$\hspace{5mm}?counter (counter (steps ?steps\&:($>$5 ?steps ?*counter-threshold*)\\
+		$\-$\hspace{5mm}?a $<$- (A ?whatever)\\
+		=$>$\\
+		$\-$\hspace{5mm}(retract ?a)\\
+		$\-$\hspace{5mm}(bind ?steps 0)\\
+		$\-$\hspace{5mm}(modify ?m (steps ?steps))\\
+		)
+		\end{minipage}
+	};
+	%------------ CAIXA PRELIMINARES ---------------------
+	\node[fancytitle, right=10pt] at (box.north west) {Rules};
+	\end{tikzpicture}
+	%------------ CONTEUDO PROPRIEDADES ---------------------
+	\begin{tikzpicture}
+	\node [mybox] (box){%
+		\begin{minipage}{0.3\textwidth}
+		More examples:\\
+		\url{https://github.com/kombinatorix/clips-examples}
+		
+		\end{minipage}
+	};
+	%------------ PROPRIEDADES BOX ----------------
+	\node[fancytitle, right=10pt] at (box.north west) {Links};
+	\end{tikzpicture}
+\end{multicols*}
+\end{document}
