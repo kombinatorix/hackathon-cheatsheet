@@ -1,6 +1,4 @@
 
-
-
 \documentclass{article}
 \usepackage[landscape]{geometry}
 \usepackage{url}
@@ -56,9 +54,9 @@
 		\textbf{\$ chmod 600 \texttildelow/.ssh/id\_rsa} \\
 		\textbf{\$ chmod 644 \texttildelow/.ssh/id\_rsa.pub} \\
         \\
-        Log into the Hackathon GitLab with your given credentials.\\
+        Log into the Hackathon GitLab with the credentials, which were given to you.\\
         \begin{enumerate}
-        \item Go to \textbf{settings} (Icon on the upper right).
+        \item Go to \textbf{settings} (icon on the upper right-hand side).
         \item Click on \textbf{SSH Keys}.
         \item \textbf{\$ cat \texttildelow/.ssh/id\_rs.pub}
         \item Copy everything to the \textbf{Key} textarea and save.
@@ -76,7 +74,7 @@
     \begin{minipage}{0.3\textwidth}
 		Configure your Git: \\
         \\
-		\textbf{\$ git config -\,-global user.name \;"Your Name"} \\
+		\textbf{\$ git config -\,-global user.name \;"FirstName LastName"} \\
 		\textbf{\$ git config -\,-global user.email \;"you@example.com"} \\
 		\textbf{\$ git config -\,-global color.ui auto} \\
 		\\
@@ -89,9 +87,9 @@
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-    	Enter the right directory:\\
+    	Enter directory:\\
     	\textbf{\$ cd fawkes-robotino/fawkes/...}\\
-        Clone the right repository:\\
+        Clone repository:\\
         \textbf{\$ git clone ...}\\
         Checkout your branch:\\
         \textbf{\$ git checkout team-\textit{*your number*}}\\
@@ -106,14 +104,14 @@
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-		You made your first changes and want to save your progress. You can display all files changed by entering:\\
+		You made your first changes and want to save your progress. You can display all changed files by entering:\\
 		\textbf{\$ git status}\\
-		Group all files that were changed and contribute to a feature an add them:\\
+		Group all files that were changed and comprise a feature by adding them:\\
 		\textbf{\$ git add [files]}\\
-		Commit the added files. Write a helpful commit message. It will save you time. \\ 
+		Commit the added files. Write a meaningful commit message.\\ 
 		\textbf{\$ git commit } will open an editor.\\
-		\textbf{\$ git commit -m "commit message"} will take the short commit message.\\
-		Now you should push that:\\
+		\textbf{\$ git commit -m "commit message"} will set a short commit message.\\
+		You can push your commit(s) to the remote repository:\\
 		\textbf{\$ git push}
     \end{minipage}
 };
@@ -127,10 +125,10 @@
     ... you added the wrong file:\\
     \textbf{\$ git reset [file]}\\ \\
 	... \textbf{git commit} opened the wrong editor:\\
-	\textbf{\$ git config --global core.editor "vim"}\\ or "emacs" if you like.\\ \\
+	\textbf{\$ git config --global core.editor "vim"}\\ or "emacs" if preferred.\\ \\
 	... don't know what you've changed:\\
 	\textbf{\$ git diff [file]}\\
-	You can look up more options at \url{https://git-scm.com/docs/git-diff}\\ \\
+	You can look up more options at:\\ \url{https://git-scm.com/docs/git-diff}\\ \\
 	... you search for a specific commit:\\
 	\textbf{\$ git log}\\
 	or do so interactively:\\
@@ -143,31 +141,15 @@
 \node[fancytitle, right=10pt] at (box.north west) {What to do, if};
 \end{tikzpicture}
 
-\begin{tikzpicture}
-\node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-	\textbf{\$ git add [files]}\\
-	If the fire is near:\\
-	\textbf{\$ git add .}\\
-	After that:\\
-	\textbf{\$ git commit -m "fire"}\\
-	\textbf{\$ git push}\\ \\
-	Run!
-    \end{minipage}
-};
-
-\node[fancytitle, right=10pt] at (box.north west) {In case of fire};
-\end{tikzpicture}
-
 
 \begin{tikzpicture}
 \node [mybox] (box){%
 	\begin{minipage}{0.3\textwidth}
-	Maybe you are new to Linux and want to go to different directories, you should use \textbf{cd}:\\
+	Maybe you are new to Linux and want to traverse directories; you should use \textbf{cd}:\\
 	\textbf{\$ cd \textit{path}}\\
 	If you want to go to your home-directory:\\
 	\textbf{\$ cd}\\
-	If you qant to go somewhere relative to your home-directory:\\
+	If you wyant to go somewhere relative to your home-directory:\\
 	\textbf{\$ cd \texttildelow/\textit{path}}\\
 	If you want to go a directory up:\\
 	\textbf{\$ cd ..}\\ \\
@@ -177,7 +159,7 @@
 		
 	If you think you need inspiration on your code, you can use grep to get your inspiration:\\
 	\textbf{\$ grep [options] \textit{searchstring} [files]}\\
-	If you don't know which file could possible contain your search string, grep can recursively go through the directories, starting from the current one:\\
+	If you don't know, which file could possible contain your search string, grep can recursively go through the directories, starting from the current one:\\
 	\textbf{\$ grep -R \textit{searchstring}}
 	\end{minipage}
 };
@@ -196,6 +178,21 @@
 };
 
 \node[fancytitle, right=10pt] at (box.north west) {Get the Simulation running};
+\end{tikzpicture}
+\begin{tikzpicture}
+\node [mybox] (box){%
+	\begin{minipage}{0.3\textwidth}
+	\textbf{\$ git add [files]}\\
+	If the fire is near:\\
+	\textbf{\$ git add .}\\
+	After that:\\
+	\textbf{\$ git commit -m "fire"}\\
+	\textbf{\$ git push}\\ \\
+	Run!
+	\end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {In case of fire};
 \end{tikzpicture}
 \end{multicols*}
 \newpage
@@ -216,7 +213,7 @@
 		\begin{tabular}{lp{5.5cm} l}
 		Facts & Representation of knowledge\\
 		\hline Templates & Abstract structure for facts\\
-		\hline Variables & Variables that only life within the scope they are defined in\\
+		\hline Variables & Variables that only live within the scope they are defined in\\
 		\hline Globals & Variables with a global scope\\
 		\hline Functions & Sequence of actions. Similiar to other programming languages \\
 		\hline Rules & The heart of CLIPS. If-Then-structure which fires if the lefthandside (LHS) is fulfilled.\\ 
@@ -232,10 +229,10 @@
 	\begin{tikzpicture}
 	\node [mybox] (box){%
 		\begin{minipage}{0.3\textwidth}
-		A fact consists of a \textbf{factname} and its \textbf{content}. There can usally only be one unique fact.
+		A fact consists of a \textbf{factname} and its \textbf{content}. There can usually only be one unique fact.
 		You can add a fact as following:\\
 		\textbf{(assert (factname content1 content2 ... contentN))}\\ \\
-		You can also have a \textbf{deffacts} construct, which asserts facts automatically wheneever the \textbf{reset} command is performed. It consits of a unique name an optional comment and at least one fact:\\
+		You can also have a \textbf{deffacts} construct, which asserts facts automatically whenever the \textbf{reset} command is performed. It consists of a unique name, an optional comment and at least one fact:\\
 
 		(deffacts deffactsname "optional comment"\\
 		$\-$\hspace{5mm} (fact1 content1 content2)\\
@@ -250,8 +247,8 @@
 	\begin{tikzpicture}
 	\node [mybox] (box){%
 		\begin{minipage}{0.3\textwidth}
-		A template consists of a \textbf{templatename} different slots and multislots, which can be constrained.
-		You can construct a template as follows:\\ \\
+		A template consists of a \textbf{templatename}, different slots and multislots, which can be constrained.
+		You can construct a template as following:\\ \\
 		(deftemplate templatename "optional comment"\\
 		$\-$\hspace{5mm}(slot slot-name1 (default ?NONE))\\
 		$\-$\hspace{5mm}(slot slot-name2 (type INTEGER))\\
@@ -259,7 +256,7 @@
 		)\\
 		A fact can be asserted like this:\\
 		\textbf{(assert (templatename\\
-			(slotname1 "foo")  (slot-name2 2)(slot-name3 3.5 1 1)))}
+			(slot-name1 "foo")  (slot-name2 2)(slot-name3 3.5 1 1)))}
 		\end{minipage}
 	};
 
@@ -269,9 +266,9 @@
 	\begin{tikzpicture}
 	\node [mybox] (box){%
 		\begin{minipage}{0.3\textwidth}
-		A slot can have a default value. One speciality ist \textbf{\$NONE}. This means this slot must be filled when a fact for this template is asserted.\\ \\
-		Additionaly, it can be specified which type values of this slot must have. Allowed types are: \textbf{SYMBOL, STRING, NUMBER, INTEGER,} and\textbf{ FLOAT.}\\
-		One can also specify which values are allowed. This can be archieved by \textbf{allowed-} and \textbf{symbols, strings, numbers, integers, floats,} and\textbf{ values.}\\
+		A slot can have a default value. One speciality is \textbf{\$NONE}. It means this slot must be filled when a fact for this template is asserted.\\ \\
+		Additionaly, it can be specified which type the values of this slot must have. Allowed types are: \textbf{SYMBOL, STRING, NUMBER, INTEGER,} and\textbf{ FLOAT.}\\
+		One can also specify which values are allowed. This can be achieved by \textbf{allowed-} and \textbf{symbols, strings, numbers, integers, floats,} and\textbf{ values.}\\
 		For numbers the allowed values can be constraint by a range, for example: \textbf{(range 1 375)}\\ \\
 		In multifield-slots the number of stored values can be restricted, for example: \textbf{(cardinality 17)}
 		\end{minipage}
@@ -320,7 +317,7 @@
 		$\-$\hspace{5mm}(bind ?y (+ ?y ?x))\\
 		$\-$\hspace{5mm}(return ?y)\\
 		)\\
-		A return value is not needed.
+		A return value is optional.
 		\end{minipage}
 	};
 
@@ -331,8 +328,8 @@
 	\begin{tikzpicture}
 	\node [mybox] (box){%
 		\begin{minipage}{0.3\textwidth}
-		Rules are the heart of CLIPS. A rule consists maily of a name, a LHS, and a RHS.
-		If, after a new fact was asserted, the LHS of rule matches, the RHS will be executed.
+		Rules are the heart of CLIPS. A rule consists mainly of a name, a LHS, and a RHS.
+		If, after a new fact was asserted, the LHS of a rule matches, its RHS will be executed.
 		An simple example would be if A is true, then B true follows:\\ \\
 		(defrule a-follows-b\\
 		$\-$\hspace{5mm}(A true)\\
